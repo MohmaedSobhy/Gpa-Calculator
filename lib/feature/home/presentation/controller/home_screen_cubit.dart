@@ -13,6 +13,7 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
   List<CourseFieldItem> fields = [];
   TextEditingController currentGpaController = TextEditingController();
   TextEditingController creditsController = TextEditingController();
+  GlobalKey<FormState> formKey = GlobalKey();
 
   double semesterGpa = 0, cumlativeGpa = 0;
   int totalCredits = 0;
@@ -52,6 +53,9 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
 
     cumlativeGpa =
         ((getComulativeGpa() * oldCredits) + totalPoints) / totalCredits;
+
+    cumlativeGpa = double.parse(cumlativeGpa.toStringAsFixed(2));
+    semesterGpa = double.parse(semesterGpa.toStringAsFixed(2));
   }
 
   int getOldCredits() {

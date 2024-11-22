@@ -13,6 +13,7 @@ class _SubjectsListViewItemState extends State<SubjectsListViewItem> {
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: HomeScreenCubit.instanse.formKey,
       child: AnimatedList(
         key: HomeScreenCubit.instanse.listKey,
         shrinkWrap: true,

@@ -21,7 +21,9 @@ class HomeScreenBodyView extends StatelessWidget {
             title: 'Calculate',
             backGround: AppColor.darkBlue,
             onTap: () {
-              HomeScreenCubit.instanse.getSubjectValues();
+              if (HomeScreenCubit.instanse.formKey.currentState!.validate()) {
+                HomeScreenCubit.instanse.getSubjectValues();
+              }
             },
           ),
           const SizedBox(

@@ -1,13 +1,15 @@
 abstract class AppValidator {
   static String? validateCourseName(String? value) {
-    if (value == null || value.toString().length <= 12) {
+    if (value == null || value.isEmpty) {
       return 'This Course name is required';
+    } else if (value.toString().length >= 12 && value.toString().length <= 2) {
+      return 'This Course name must be from 2 to 12 letter';
     }
     return null;
   }
 
   static String? validateCredits(String? value) {
-    if (value == null || value.toString().length < 2) {
+    if (value == null || value.isNotEmpty.toString().length >= 7) {
       return 'Credits Hours is required';
     }
     final intValue = int.tryParse(value);
