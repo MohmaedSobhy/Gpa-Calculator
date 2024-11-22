@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gpa_culator/core/theme/app_color.dart';
 import 'package:gpa_culator/core/utils/app_string.dart';
+import 'package:gpa_culator/core/utils/app_validator.dart';
 import 'package:gpa_culator/feature/home/presentation/widgets/custome_text_field.dart';
 
 import 'drop_down_list_items.dart';
@@ -10,6 +11,7 @@ class CourseFieldItem extends StatefulWidget {
   final TextEditingController courseNameController;
   final TextEditingController creditsController;
   String? selectedGrade;
+
   CourseFieldItem({
     super.key,
     required this.courseNameController,
@@ -46,6 +48,7 @@ class _CourseFieldItemState extends State<CourseFieldItem> {
               child: CustomeTextFormField(
                 controller: widget.courseNameController,
                 hint: AppString.courseName,
+                validator: AppValidator.validateCourseName,
                 inputType: TextInputType.text,
               ),
             ),
@@ -86,6 +89,7 @@ class _CourseFieldItemState extends State<CourseFieldItem> {
                       ),
                       child: CustomeTextFormField(
                         controller: widget.creditsController,
+                        validator: AppValidator.validateCredits,
                         hint: AppString.credits,
                         inputType: TextInputType.number,
                       ),
