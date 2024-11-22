@@ -1,0 +1,34 @@
+name: gpa_culator
+description: "A new Flutter project."
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  cupertino_icons: ^1.0.8
+  dotted_border: ^2.1.0
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.6
+  flutter_launcher_icons: ^0.14.1
+
+dev_dependencies:
+  flutter_lints: ^4.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/app_logo.png"
+  min_sdk_android: 24 # android min sdk min:16, default 21
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/app_logo.png"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
