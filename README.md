@@ -22,7 +22,7 @@ Easily calculate and track your GPA with the **GPA Calculator App**! 🎓
 
 🎥 **Watch the Tutorial**  
 - Learn how to use the app with our step-by-step video guide!  
-  [![Watch Tutorial on YouTube](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)  
+  [![Watch Tutorial on YouTube](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://youtu.be/2moPeaxK4os)  
 
 🚀 **Get Started Today**  
 - Download the **GPA Calculator App** now and take charge of your academic success!
