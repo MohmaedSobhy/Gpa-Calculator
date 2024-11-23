@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:gpa_culator/core/theme/app_color.dart';
 import 'package:gpa_culator/core/utils/app_string.dart';
@@ -29,7 +28,8 @@ class HomeScreen extends StatelessWidget {
           actions: [
             IconButton(
               onPressed: () async {
-                if (HomeScreenCubit.instanse.fields.isNotEmpty) {
+                if (HomeScreenCubit.instanse.fields.isNotEmpty &&
+                    HomeScreenCubit.instanse.formKey.currentState!.validate()) {
                   HomeScreenCubit.instanse.savedSubjectGrades();
                 }
               },
@@ -42,13 +42,7 @@ class HomeScreen extends StatelessWidget {
         ),
         body: BlocListener<HomeScreenCubit, HomeScreenState>(
           listener: (context, state) {
-            if (state is SaveGradesLoading) {
-              log(state.toString());
-              showLoadingDialoge(
-                context,
-              );
-            } else if (state is SaveGradesSuccess) {
-              Navigator.of(context).pop();
+            if (state is SaveGradesSuccess) {
               showDialogeMessage(context, title: AppString.yourGradesSaved);
             }
           },

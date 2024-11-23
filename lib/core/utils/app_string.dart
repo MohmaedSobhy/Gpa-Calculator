@@ -13,6 +13,12 @@ abstract class AppString {
   static const String messageCalculate =
       'You Have To Add Course To Calculate your Gpa';
   static const String yourGradesSaved = 'Your Grades Saved';
+  static const String subjectGrade = 'Subject Grade';
+  static const String noSavedSubjects =
+      'There is no Saved Subjects yet \n Add Some Subjects';
+
+  static const String subject = 'Subject';
+
   static List<String> grades = [
     'A+',
     'A',

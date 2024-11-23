@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gpa_culator/core/theme/app_color.dart';
+import 'package:gpa_culator/feature/subjects_grades/presentation/screens/subject_grades_screen.dart';
 
 class DrawerItemsView extends StatelessWidget {
   const DrawerItemsView({super.key});
@@ -45,7 +46,11 @@ class DrawerItemsView extends StatelessWidget {
               size: 25,
             ),
             title: const Text('Saved Grades'),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return const SubjectGradesScreen();
+              }));
+            },
           ),
         ],
       ),
