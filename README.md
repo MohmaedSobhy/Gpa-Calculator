@@ -24,7 +24,3 @@ Easily calculate and track your GPA with the **GPA Calculator App**! 🎓
 - Learn how to use the app with our step-by-step video guide!  
   [![Watch Tutorial on YouTube]](https://youtu.be/2moPeaxK4os)  
 
-🚀 **Get Started Today**  
-- Download the **GPA Calculator App** now and take charge of your academic success!
-
-Track your grades, stay organized, and achieve your goals with the **GPA Calculator App**! 🌟
