@@ -28,8 +28,13 @@ class HomeScreen extends StatelessWidget {
           actions: [
             IconButton(
               onPressed: () async {
-                if (HomeScreenCubit.instanse.fields.isNotEmpty &&
-                    HomeScreenCubit.instanse.formKey.currentState!.validate()) {
+                if (HomeScreenCubit.instanse.fields.isEmpty) {
+                  showDialogeMessage(
+                    context,
+                    title: AppString.messageCalculate,
+                  );
+                } else if (HomeScreenCubit.instanse.formKey.currentState!
+                    .validate()) {
                   HomeScreenCubit.instanse.savedSubjectGrades();
                 }
               },

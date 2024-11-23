@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gpa_culator/core/theme/app_color.dart';
+import 'package:gpa_culator/feature/about/presentation/screens/about_screen.dart';
 import 'package:gpa_culator/feature/subjects_grades/presentation/screens/subject_grades_screen.dart';
 
 class DrawerItemsView extends StatelessWidget {
@@ -32,15 +33,6 @@ class DrawerItemsView extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(
-              Icons.school,
-              color: AppColor.darkBlue,
-              size: 25,
-            ),
-            title: const Text('Edit Grades'),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: const Icon(
               Icons.bookmark,
               color: AppColor.darkBlue,
               size: 25,
@@ -49,6 +41,19 @@ class DrawerItemsView extends StatelessWidget {
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                 return const SubjectGradesScreen();
+              }));
+            },
+          ),
+          ListTile(
+            leading: const Icon(
+              Icons.mode_comment,
+              color: AppColor.darkBlue,
+              size: 25,
+            ),
+            title: const Text('About'),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return const AboutScreen();
               }));
             },
           ),

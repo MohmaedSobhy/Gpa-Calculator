@@ -14,8 +14,12 @@ abstract class AppString {
       'You Have To Add Course To Calculate your Gpa';
   static const String yourGradesSaved = 'Your Grades Saved';
   static const String subjectGrade = 'Subject Grade';
+  static const String about = 'About App';
   static const String noSavedSubjects =
       'There is no Saved Subjects yet \n Add Some Subjects';
+
+  static const String appInfo =
+      'tool designed to help students determine their academic performance by calculating their average grade points over a specified period, such as a semester or their entire academic career.';
 
   static const String subject = 'Subject';
 

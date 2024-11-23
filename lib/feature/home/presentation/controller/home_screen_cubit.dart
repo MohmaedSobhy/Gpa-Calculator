@@ -79,7 +79,7 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
         await AppData.insertDB({
           ColumnKey.subjectName: item.courseNameController.text.toString(),
           ColumnKey.subjectGrade: item.selectedGrade.toString(),
-          ColumnKey.credits: item.creditsController.toString(),
+          ColumnKey.credits: item.creditsController.text.toString(),
         });
       }
       emit(SaveGradesSuccess());
