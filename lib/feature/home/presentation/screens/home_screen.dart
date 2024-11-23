@@ -6,6 +6,7 @@ import 'package:gpa_culator/feature/home/presentation/controller/home_screen_cub
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gpa_culator/feature/home/presentation/views/drawer_item_view.dart';
 import 'package:gpa_culator/feature/home/presentation/views/home_screen_body_view.dart';
+import 'package:gpa_culator/feature/home/presentation/widgets/show_dialoge_message.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -28,7 +29,9 @@ class HomeScreen extends StatelessWidget {
           actions: [
             IconButton(
               onPressed: () async {
-                log(' Save Grades');
+                if (HomeScreenCubit.instanse.fields.isNotEmpty) {
+                  HomeScreenCubit.instanse.savedSubjectGrades();
+                }
               },
               icon: const Icon(
                 Icons.bookmark,
@@ -37,7 +40,20 @@ class HomeScreen extends StatelessWidget {
             )
           ],
         ),
-        body: const HomeScreenBodyView(),
+        body: BlocListener<HomeScreenCubit, HomeScreenState>(
+          listener: (context, state) {
+            if (state is SaveGradesLoading) {
+              log(state.toString());
+              showLoadingDialoge(
+                context,
+              );
+            } else if (state is SaveGradesSuccess) {
+              Navigator.of(context).pop();
+              showDialogeMessage(context, title: AppString.yourGradesSaved);
+            }
+          },
+          child: const HomeScreenBodyView(),
+        ),
       ),
     );
   }

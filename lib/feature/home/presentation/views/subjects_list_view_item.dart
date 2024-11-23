@@ -33,7 +33,7 @@ class _SubjectsListViewItemState extends State<SubjectsListViewItem> {
               ),
               IconButton(
                 onPressed: () {
-                  removeItem(index);
+                  HomeScreenCubit.instanse.removeWidgetFromAnimatedList(index);
                 },
                 color: AppColor.darkBlue,
                 icon: const Icon(Icons.cancel_outlined),
@@ -42,24 +42,6 @@ class _SubjectsListViewItemState extends State<SubjectsListViewItem> {
           );
         },
       ),
-    );
-  }
-
-  void removeItem(int index) {
-    HomeScreenCubit.instanse.fields.removeAt(index);
-
-    HomeScreenCubit.instanse.listKey.currentState?.removeItem(
-      index,
-      (context, animation) {
-        return SlideTransition(
-          position: Tween<Offset>(
-            begin: const Offset(0.0, 0.0), // Start at the item's position
-            end: const Offset(2.0, 0.0), // Move off-screen to the right
-          ).animate(animation),
-          child: const SizedBox(),
-        );
-      },
-      duration: const Duration(milliseconds: 300),
     );
   }
 }

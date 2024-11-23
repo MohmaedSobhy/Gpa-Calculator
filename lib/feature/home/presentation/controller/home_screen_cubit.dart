@@ -1,5 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:gpa_culator/core/services/column_keys.dart';
+import 'package:gpa_culator/core/services/sql_lite_services.dart';
 import 'package:gpa_culator/core/utils/app_string.dart';
 import 'package:gpa_culator/feature/home/presentation/widgets/course_field_item.dart';
 import 'package:meta/meta.dart';
@@ -68,5 +70,39 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
     return double.parse(currentGpaController.text.toString().isEmpty
         ? '0.0'
         : currentGpaController.text.toString());
+  }
+
+  void savedSubjectGrades() async {
+    emit(SaveGradesLoading());
+    try {
+      for (CourseFieldItem item in fields) {
+        await AppData.insertDB({
+          ColumnKey.subjectName: item.courseNameController.text.toString(),
+          ColumnKey.subjectGrade: item.selectedGrade.toString(),
+          ColumnKey.credits: item.creditsController.toString(),
+        });
+      }
+      emit(SaveGradesSuccess());
+    } catch (error) {
+      emit(SaveGradesFailed());
+    }
+  }
+
+  void removeWidgetFromAnimatedList(index) {
+    fields.removeAt(index);
+
+    listKey.currentState?.removeItem(
+      index,
+      (context, animation) {
+        return SlideTransition(
+          position: Tween<Offset>(
+            begin: const Offset(0.0, 0.0), // Start at the item's position
+            end: const Offset(2.0, 0.0), // Move off-screen to the right
+          ).animate(animation),
+          child: const SizedBox(),
+        );
+      },
+      duration: const Duration(milliseconds: 1),
+    );
   }
 }

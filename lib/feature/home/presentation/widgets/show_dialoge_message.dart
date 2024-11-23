@@ -43,3 +43,18 @@ void showDialogeMessage(BuildContext context, {required String title}) {
     Navigator.of(context).pop();
   });
 }
+
+void showLoadingDialoge(BuildContext context) {
+  showDialog(
+      context: context,
+      builder: (context) {
+        return const AlertDialog(
+          contentPadding: EdgeInsets.all(8),
+          content: Center(
+            child: CircularProgressIndicator(
+              color: AppColor.darkBlue,
+            ),
+          ),
+        );
+      });
+}

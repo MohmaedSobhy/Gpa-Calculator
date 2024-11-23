@@ -10,3 +10,9 @@ final class HomeScreenAdd extends HomeScreenState {}
 final class CalculateGpaLoading extends HomeScreenState {}
 
 final class GpaResultesDone extends HomeScreenState {}
+
+final class SaveGradesLoading extends HomeScreenState {}
+
+final class SaveGradesSuccess extends HomeScreenState {}
+
+final class SaveGradesFailed extends HomeScreenState {}

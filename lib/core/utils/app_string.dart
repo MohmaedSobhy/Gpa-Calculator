@@ -12,6 +12,7 @@ abstract class AppString {
   static const String totalCredits = 'Total Credits';
   static const String messageCalculate =
       'You Have To Add Course To Calculate your Gpa';
+  static const String yourGradesSaved = 'Your Grades Saved';
   static List<String> grades = [
     'A+',
     'A',
