@@ -10,6 +10,8 @@ abstract class AppString {
   static const String semesterCredits = 'Semester Credits';
   static const String currentGpa = 'Current GPA';
   static const String totalCredits = 'Total Credits';
+  static const String messageCalculate =
+      'You Have To Add Course To Calculate your Gpa';
   static List<String> grades = [
     'A+',
     'A',
