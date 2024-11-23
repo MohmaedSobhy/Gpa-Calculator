@@ -1,16 +1,30 @@
-# gpa_culator
+**GPA Calculator App**
 
-A new Flutter project.
+Easily calculate and track your GPA with the **GPA Calculator App**! 🎓
 
-## Getting Started
+📊 **Accurate GPA Calculation**  
+- Input your grades and credit hours to get an accurate GPA in seconds. Simplify your academic planning with ease.
 
-This project is a starting point for a Flutter application.
+💾 **Save Your Grades**  
+- Keep track of your grades for each course and semester. Save your data securely and access it anytime for future reference.
 
-A few resources to get you started if this is your first Flutter project:
+📂 **Organized Records**  
+- View a detailed breakdown of all your courses, grades, credit hours, and GPA in one place. Stay on top of your academic progress.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+📝 **Editable Entries**  
+- Need to update a grade? Easily edit or delete entries to keep your records accurate and up-to-date.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+🎯 **Plan for Success**  
+- Monitor your performance and set GPA goals to stay motivated throughout your academic journey.
+
+✨ **User-Friendly Interface**  
+- Enjoy a clean and intuitive design that makes calculating and saving your GPA a breeze.
+
+🎥 **Watch the Tutorial**  
+- Learn how to use the app with our step-by-step video guide!  
+  [![Watch Tutorial on YouTube](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)  
+
+🚀 **Get Started Today**  
+- Download the **GPA Calculator App** now and take charge of your academic success!
+
+Track your grades, stay organized, and achieve your goals with the **GPA Calculator App**! 🌟
