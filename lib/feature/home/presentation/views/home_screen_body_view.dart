@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gpa_culator/core/theme/app_color.dart';
+import 'package:gpa_culator/core/utils/app_string.dart';
 import 'package:gpa_culator/feature/home/presentation/views/home_custome_scroll_view.dart.dart';
 import 'package:gpa_culator/feature/home/presentation/widgets/custome_button.dart';
+import 'package:gpa_culator/feature/home/presentation/widgets/show_dialoge_message.dart';
 
 import '../controller/home_screen_cubit.dart';
 
@@ -21,7 +23,13 @@ class HomeScreenBodyView extends StatelessWidget {
             title: 'Calculate',
             backGround: AppColor.darkBlue,
             onTap: () {
-              if (HomeScreenCubit.instanse.formKey.currentState!.validate()) {
+              if (HomeScreenCubit.instanse.fields.isEmpty) {
+                showDialogeMessage(
+                  context,
+                  title: AppString.messageCalculate,
+                );
+              } else if (HomeScreenCubit.instanse.formKey.currentState!
+                  .validate()) {
                 HomeScreenCubit.instanse.getSubjectValues();
               }
             },
